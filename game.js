@@ -342,6 +342,21 @@ draw = function () {
   // Call original draw for the rest of the game
   oldDrawPlayer();
 };
+
+
+// --- MUTE / UNMUTE BUTTON HANDLER ---
+const muteBtn = document.getElementById('muteBtn');
+let isMuted = false;
+
+muteBtn.addEventListener('click', () => {
+  isMuted = !isMuted;
+  muteBtn.classList.toggle('muted', isMuted);
+  muteBtn.textContent = isMuted ? "🔇" : "🔊";
+
+  // Toggle all audio objects
+  [menuMusic, gameMusic, sfxCollect, sfxHit, sfxGameOver].forEach(a => a.muted = isMuted);
+});
+// added mute unmute toggle button
 /* ---------- END OF PLAYER GLOW PULSE ANIMATION ---------- */
 /* ---------- SOUND MANAGEMENT (NEW FILE: sound.js) ---------- */
 // Moved sound functions to sound.js for better organization
@@ -350,3 +365,4 @@ draw = function () {
 /* ---------- END OF EXTRA POLISH ---------- */
 
 /* ---------- END OF GAME CODE ---------- */
+
