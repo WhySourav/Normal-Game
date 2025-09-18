@@ -210,8 +210,13 @@ requestAnimationFrame(loop);
 try { menuMusic.play().catch(()=>{}); } catch (e) {}
 window.addEventListener('load', () => { startMenu.style.display = 'block'; resizeCanvas(); });
 
-
-
+// --- FIX: Ensure menu music plays after first user interaction ---
+document.addEventListener('click', function enableAudioOnce() {
+  if (!gameRunning) { // ✅ only play if game hasn't started yet
+    fadeIn(menuMusic, 1200);
+  }
+  document.removeEventListener('click', enableAudioOnce);
+});
 
 /* ---------- EXTRA POLISH: PARTICLES + SCREEN SHAKE + PARALLAX ---------- */
 
@@ -344,9 +349,4 @@ draw = function () {
 // Note: Remember to include sound.js in your HTML file after game.js
 /* ---------- END OF EXTRA POLISH ---------- */
 
-
-
-
 /* ---------- END OF GAME CODE ---------- */
-
-/* ---------- END OF GAME CODE ---------- */        
