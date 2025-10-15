@@ -356,12 +356,66 @@ muteBtn.addEventListener('click', () => {
   // Toggle all audio objects
   [menuMusic, gameMusic, sfxCollect, sfxHit, sfxGameOver].forEach(a => a.muted = isMuted);
 });
+
+
+
+
+
+
 // added mute unmute toggle button
+
+
+
+
+
+
+
+
+
+
+
+
 /* ---------- END OF PLAYER GLOW PULSE ANIMATION ---------- */
+
+
+
+
+
+
+
+
 /* ---------- SOUND MANAGEMENT (NEW FILE: sound.js) ---------- */
 // Moved sound functions to sound.js for better organization
+
+
+
+
+
+
+
+
 /* ---------- END OF SOUND MANAGEMENT ---------- */
+
+
+
+
+
+
+
+
+
 // Note: Remember to include sound.js in your HTML file after game.js
+
+
+
+
+
+
+
+
+
+
+  
 /* ---------- END OF EXTRA POLISH ---------- */
 
 /* ---------- END OF GAME CODE ---------- */
